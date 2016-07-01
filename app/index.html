@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hackathon CP App</title>
+    <title>¡Casa 1,2,3!</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,23 +35,8 @@
 <!-- Container for the view -->
 <section layout="row" flex style="height: 100vh;" ng-controller="BaseLayoutController as vm">
 
-    <!-- Sidebar navigation for the main app sections -->
-    <md-sidenav
-            class="md-sidenav-left"
-            md-component-id="main-sidebar"
-            md-is-locked-open="$mdMedia('gt-md') && vm.isUserLoggedIn"
-            md-disable-backdrop
-            md-whiteframe="4">
-        <md-content layout-padding ng-controller="SideNavController as vm">
-            <p hide show-gt-md>
-                This sidenav is locked open on your device. To go back to the default behavior,
-                narrow your display.
-            </p>
-        </md-content>
-    </md-sidenav>
-
     <!-- Container for the ui-view -->
-    <section class="container">
+    <section class="container" style="width: 100%;">
         <div ui-view></div>
     </section>
 
@@ -59,23 +44,43 @@
 
 </body>
 
+<!-- Configuration of the Firebase application -->
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var firebaseConfiguration = {
+        apiKey: "AIzaSyDmLpH43pUlz7Hzj4yi8jZPe-_kMtGhJQ0",
+        authDomain: "cpmx7-hackathon.firebaseapp.com",
+        databaseURL: "https://cpmx7-hackathon.firebaseio.com",
+        storageBucket: ""
+    };
+
+    // Init of the firebase application
+    firebase.initializeApp(firebaseConfiguration);
+</script>
+
 <!-- Components for the Angular Material Library -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
 
 <!-- App Components -->
 <script src="app.js"></script>
 
 <!-- Services -->
+<script src="components/auth/services/auth.service.js"></script>
+<script src="components/core/services/budget.service.js"></script>
 
 <!-- Directives -->
 
 <!-- Controllers -->
+<script src="components/auth/controllers/login.dialog.controller.js"></script>
 <script src="components/core/controllers/base.controller.js"></script>
 <script src="components/core/controllers/sidenav.controller.js"></script>
 <script src="components/core/controllers/header.controller.js"></script>
+<script src="components/core/controllers/budget.controller.js"></script>
 
 </html>

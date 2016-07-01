@@ -1,0 +1,164 @@
+<style>
+    #background-house {
+        position: fixed;
+        width: 100%;
+        z-index: 0;
+        height: 400px;
+        bottom: 0;
+        background-image: url("components/core/img/city.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    #budget-container {
+        width: 75%;
+        margin: 100px auto;
+        z-index: 1;
+        background: white;
+    }
+
+    #list-container{
+        width: 100%;
+    }
+
+    #price{
+
+    }
+
+    #price-card{
+        margin: 40px;
+    }
+
+</style>
+<div flex layout="column">
+    <!-- Material design house -->
+    <div id="background-house"></div>
+
+    <!-- Container for the budget results -->
+    <md-whiteframe class="md-whiteframe-2dp"
+                   id="budget-container"
+                   flex-sm="100" flex-gt-sm="100" flex-gt-md="75" layout="column" layout-align="center center">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Resultado del presupuesto {{ vm.userId }}</span>
+                </h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <!-- Container for the list of results -->
+        <md-content id="list-container">
+            <md-list>
+                <md-subheader class="md-no-sticky">Techo</md-subheader>
+                <md-list-item class="md-3-line">
+                    <img src="components/core/img/techo.svg" class="md-avatar" alt="Item price" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Techo de concreto básico</h3>
+                        <h4>Cantidad: {{ vm.budget.sqMeters }} m2</h4>
+                        <p><strong>Costo: ${{ vm.budget.roof.price }}</strong></p>
+                    </div>
+                </md-list-item>
+                <md-divider ></md-divider>
+
+                <md-subheader class="md-no-sticky">Muros</md-subheader>
+                <md-list-item class="md-3-line">
+                    <img src="components/core/img/castillo.svg" class="md-avatar" alt="Item price" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Castillos</h3>
+                        <h4>Cantidad: {{ vm.budget.castles.count }}</h4>
+                        <p><strong>Costo: ${{ vm.budget.castles.price }}</strong></p>
+                    </div>
+                </md-list-item>
+                <md-divider ></md-divider>
+                <md-list-item class="md-3-line">
+                    <img src="components/core/img/muros.svg" class="md-avatar" alt="Item price" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Blocks</h3>
+                        <h4>Cantidad: {{ vm.budget.sqMeters }} m2</h4>
+                        <p><strong>Costo: ${{ vm.budget.blocks.price }}</strong></p>
+                    </div>
+                </md-list-item>
+                <md-divider ></md-divider>
+
+                <md-subheader class="md-no-sticky">Piso</md-subheader>
+                <md-list-item class="md-3-line">
+                    <img src="components/core/img/piso.svg" class="md-avatar" alt="Item price" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Piso de Concreto</h3>
+                        <h4>Cantidad: {{ vm.budget.sqMeters }} m2</h4>
+                        <p><strong>Costo: ${{ vm.budget.floor.price }}</strong></p>
+                    </div>
+                </md-list-item>
+
+                <md-subheader class="md-no-sticky" ng-show="vm.budget.paint">Pintura</md-subheader>
+                <md-list-item class="md-3-line" ng-show="vm.budget.paint">
+                    <img src="components/core/img/pintura.svg" class="md-avatar" alt="Item price" />
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Pintura de muros</h3>
+                        <h4>Cantidad: N/D</h4>
+                        <p><strong>Costo: ${{ vm.budget.paint.price }}</strong></p>
+                    </div>
+                </md-list-item>
+
+            </md-list>
+        </md-content>
+
+        <!-- Container for the price information -->
+        <div layout="row">
+            <!-- Container for the actual price and actual salary -->
+            <div layout="column" style="text-align: left;" flex="30">
+                <md-card id="price-card">
+                    <img src="components/core/img/material-house.jpg" class="md-card-image" alt="House">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Total Necesario para la Remodelación:</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <h2 id="price">$ {{ vm.budget.total }} pesos</h2>
+                        <h3>Ingreso semanal: ${{ vm.budget.weeklyIncome }}</h3>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <!-- Container for the payment plans -->
+            <div layout="column" style="text-align: center; margin-top: 50px;" flex>
+                <h4>Planes de liquidación (Base ahorro)</h4>
+
+                <!-- Container for the liquidation plans -->
+                <div layout="row" >
+                    <div flex="25">
+                        <h4>6 meses</h4>
+                        <span>Ahorros mensuales de</span>
+                        <h4>$ {{ vm.roundNumber( vm.budget.total / 6 ) }}</h4>
+                    </div>
+
+                    <div flex="25">
+                        <h4>12 meses</h4>
+                        <span>Ahorros mensuales de</span>
+                        <h4>$ {{ vm.roundNumber( vm.budget.total / 12 ) }}</h4>
+                    </div>
+
+                    <div flex="25">
+                        <h4>24 meses</h4>
+                        <span>Ahorros mensuales de</span>
+                        <h4>$ {{ vm.roundNumber( vm.budget.total / 24 ) }}</h4>
+                    </div>
+
+                    <div flex="25">
+                        <h4>36 meses</h4>
+                        <span>Ahorros mensuales de</span>
+                        <h4>$ {{ vm.roundNumber( vm.budget.total / 36 ) }}</h4>
+                    </div>
+                </div>
+
+                <!-- Simple money image -->
+                <img src="components/core/img/money.png" style="margin: 0 auto;width: 300px;">
+            </div>
+        </div>
+
+
+    </md-whiteframe>
+</div>

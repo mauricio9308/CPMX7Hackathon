@@ -15,14 +15,17 @@
      * */
     function AppConfiguration($locationProvider, $stateProvider, $urlRouterProvider) {
         //Setting the application to the html5 mode
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
+        //$locationProvider.html5Mode({
+        //    enabled: true
+        //});
 
-        $stateProvider.state('state1', {
-            url: "/state1",
-            templateUrl: "partials/state1.html"
+        $stateProvider.state('home', {
+            url: "/",
+            templateUrl: "components/core/views/home.html"
+        }).state('budget', {
+            url: "/budget?userId",
+            controller: 'BudgetController as vm',
+            templateUrl: "components/core/views/budget.html"
         });
 
         //Setting the default route for the application
