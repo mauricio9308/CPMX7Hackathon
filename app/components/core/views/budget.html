@@ -71,7 +71,6 @@
                         <p><strong>Costo: ${{ vm.budget.castles.price }}</strong></p>
                     </div>
                 </md-list-item>
-                <md-divider ></md-divider>
                 <md-list-item class="md-3-line">
                     <img src="components/core/img/muros.svg" class="md-avatar" alt="Item price" />
                     <div class="md-list-item-text" layout="column">
@@ -91,6 +90,7 @@
                         <p><strong>Costo: ${{ vm.budget.floor.price }}</strong></p>
                     </div>
                 </md-list-item>
+                <md-divider ></md-divider>
 
                 <md-subheader class="md-no-sticky" ng-show="vm.budget.paint">Pintura</md-subheader>
                 <md-list-item class="md-3-line" ng-show="vm.budget.paint">
@@ -101,14 +101,15 @@
                         <p><strong>Costo: ${{ vm.budget.paint.price }}</strong></p>
                     </div>
                 </md-list-item>
+                <md-divider ng-show="vm.budget.paint"></md-divider>
 
             </md-list>
         </md-content>
 
         <!-- Container for the price information -->
-        <div layout="row">
+        <div layout="column" layout-gt-md="row">
             <!-- Container for the actual price and actual salary -->
-            <div layout="column" style="text-align: left;" flex="30">
+            <div layout="column" style="text-align: left;" flex="100" flex-gt-md="30">
                 <md-card id="price-card">
                     <img src="components/core/img/material-house.jpg" class="md-card-image" alt="House">
                     <md-card-title>
@@ -124,7 +125,7 @@
             </div>
 
             <!-- Container for the payment plans -->
-            <div layout="column" style="text-align: center; margin-top: 50px;" flex>
+            <div layout="column" style="text-align: center; margin-top: 50px;" flex-gt-md="70" flex="100">
                 <h4>Planes de liquidación (Base ahorro)</h4>
 
                 <!-- Container for the liquidation plans -->
