@@ -100,3 +100,51 @@ body{
     text-align: center;
     margin-bottom: 30px;
 }
+
+#background-house {
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+    height: 400px;
+    bottom: 0;
+    background-image: url("components/core/img/city.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#budget-container {
+    width: 75%;
+    margin: 100px auto;
+    z-index: 1;
+    background: white;
+}
+
+#list-container{
+    width: 100%;
+}
+
+#price{
+
+}
+
+#price-card{
+    margin: 40px;
+}
+
+#banks-container md-whiteframe{
+    margin: 10px;
+}
+
+#banks-container md-whiteframe img{
+    width: 300px;
+    height: 300px;
+}
+
+md-list-item{
+    margin: 10px;
+}
+
+md-list-item .md-button{
+    margin-top: 25px;
+}

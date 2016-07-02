@@ -1,36 +1,3 @@
-<style>
-    #background-house {
-        position: fixed;
-        width: 100%;
-        z-index: 0;
-        height: 400px;
-        bottom: 0;
-        background-image: url("components/core/img/city.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-    }
-
-    #budget-container {
-        width: 75%;
-        margin: 100px auto;
-        z-index: 1;
-        background: white;
-    }
-
-    #list-container{
-        width: 100%;
-    }
-
-    #price{
-
-    }
-
-    #price-card{
-        margin: 40px;
-    }
-
-</style>
 <div flex layout="column">
     <!-- Material design house -->
     <div id="background-house"></div>
@@ -42,7 +9,7 @@
         <md-toolbar>
             <div class="md-toolbar-tools">
                 <h2>
-                    <span>Resultado del presupuesto {{ vm.userId }}</span>
+                    <span>Resultado del presupuesto {{ vm.userId }} (Presupuestos válidos en Guadalajara, Jalisco)</span>
                 </h2>
                 <span flex></span>
             </div>
@@ -59,6 +26,7 @@
                         <h4>Cantidad: {{ vm.budget.sqMeters }} m2</h4>
                         <p><strong>Costo: ${{ vm.budget.roof.price }}</strong></p>
                     </div>
+                    <md-button class="md-raised md-primary">Ver precios</md-button>
                 </md-list-item>
                 <md-divider ></md-divider>
 
@@ -70,6 +38,7 @@
                         <h4>Cantidad: {{ vm.budget.castles.count }}</h4>
                         <p><strong>Costo: ${{ vm.budget.castles.price }}</strong></p>
                     </div>
+                    <md-button class="md-raised md-primary">Ver precios</md-button>
                 </md-list-item>
                 <md-list-item class="md-3-line">
                     <img src="components/core/img/muros.svg" class="md-avatar" alt="Item price" />
@@ -78,6 +47,7 @@
                         <h4>Cantidad: {{ vm.budget.sqMeters }} m2</h4>
                         <p><strong>Costo: ${{ vm.budget.blocks.price }}</strong></p>
                     </div>
+                    <md-button class="md-raised md-primary">Ver precios</md-button>
                 </md-list-item>
                 <md-divider ></md-divider>
 
@@ -89,6 +59,7 @@
                         <h4>Cantidad: {{ vm.budget.sqMeters }} m2</h4>
                         <p><strong>Costo: ${{ vm.budget.floor.price }}</strong></p>
                     </div>
+                    <md-button class="md-raised md-primary">Ver precios</md-button>
                 </md-list-item>
                 <md-divider ></md-divider>
 
@@ -100,6 +71,7 @@
                         <h4>Cantidad: N/D</h4>
                         <p><strong>Costo: ${{ vm.budget.paint.price }}</strong></p>
                     </div>
+                    <md-button class="md-raised md-primary">Ver precios</md-button>
                 </md-list-item>
                 <md-divider ng-show="vm.budget.paint"></md-divider>
 
@@ -159,6 +131,30 @@
                 <img src="components/core/img/money.png" style="margin: 0 auto;width: 300px;">
             </div>
         </div>
+
+        <!-- Container for the banks -->
+        <div layout="column" style="text-align: center; margin-bottom: 50px;" flex="100" id="banks-container">
+            <h4>Consigue financiamiento para tu proyecto con</h4>
+
+            <!-- Container for the liquidation plans -->
+            <div layout="row" >
+                <md-whiteframe flex="33" class="md-whiteframe-2dp">
+                    <img src="components/core/img/banamex.jpg" style="margin: 0 auto;width: 300px;">
+                    <h4>Banamex</h4>
+                </md-whiteframe>
+
+                <md-whiteframe flex="33" class="md-whiteframe-2dp">
+                    <img src="components/core/img/banorte.jpg" style="margin: 0 auto;width: 300px;">
+                    <h4>Banorte</h4>
+                </md-whiteframe>
+
+                <md-whiteframe flex="33" class="md-whiteframe-2dp">
+                    <img src="components/core/img/santander.jpg" style="margin: 0 auto;width: 300px;">
+                    <h4>Santander</h4>
+                </md-whiteframe>
+            </div>
+        </div>
+
 
 
     </md-whiteframe>
