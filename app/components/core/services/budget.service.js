@@ -59,7 +59,7 @@
 
                     //We add the price of the paint to the budget if its considered
                     if( values.isPainted ){
-                        resultValues.paint = { price : roundNumber( 1200 * buildingSqMeter ) };
+                        resultValues.paint = { price : roundNumber( 120 * buildingSqMeter ) };
                         total += resultValues.paint.price;
                     }
 
