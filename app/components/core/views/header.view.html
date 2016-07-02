@@ -1,12 +1,24 @@
+<style>
+    #nav-budget{
+        position: fixed;
+        top: 0;
+    }
+
+    #logo{
+        width: 50px;
+        margin: 10px;
+    }
+</style>
 <!-- Container for the Header components -->
 <div ng-controller="HeaderController as vm">
-    <md-toolbar>
+    <md-toolbar id="nav-budget">
         <div class="md-toolbar-tools">
             <!--<md-button class="md-icon-button" aria-label="Settings" ng-click="vm.toggleSidebar()">-->
                 <!--<md-icon md-font-set="material-icons">menu</md-icon>-->
             <!--</md-button>-->
+            <img src="chatimg/juan.png" id="logo" class="md-avatar" alt="Brand logo" />
             <h2>
-                <span>¡Casa 1,2,3!</span>
+                <span>El Inge Juan</span>
             </h2>
             <span flex></span>
 

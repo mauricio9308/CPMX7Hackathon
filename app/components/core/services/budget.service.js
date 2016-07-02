@@ -20,7 +20,9 @@
          * Rounds a number to only two decimal places
          * */
         function roundNumber( number ){
+            console.log('number: ' + number);
             var round = Math.round( number  * 100) / 100;
+            console.log('round: ' + round);
             return round;
         }
 
@@ -40,6 +42,7 @@
 
                     //Result budget values
                     var buildingSqMeter = values.roomSize.height * values.roomSize.width;
+                    console.log('sqMeters: ' + buildingSqMeter);
 
                     var resultValues = {
                         'castles': { count: 4, price: 596 },
