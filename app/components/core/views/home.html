@@ -1,32 +1,68 @@
 <style>
     #home-page-container{
         position: relative;
-        top: 70px
+        top: 70px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
 </style>
 <div class="container" id="home-page-container">
-    <div id="header">
-        <div id="logoContainer">
-            <img src="Images/logoInge.png">
+    <div id="splashContainer">
+        <div id="logoSplash" style="width:100%;">
+            <img src="Images/logoSplash.png" style="width:100%;">
         </div>
-        <div class="saludoContainer">
-            <h1>¡Hola! Yo soy el Inge Juan y te echaré la mano para que sepas todo lo que necesitas para mejorar tu casa.</h1>
-        </div>
-    </div>
-    <div>
-        <div class="videoContainer">
-            <iframe width="560" height="315" src=luisss.mp4 frameborder="0" allowfullscreen style="display:block;"></iframe>
-        </div>
-        <div class="descriptionContainer">
-            <div id="imgConoceme"style="margin-bottom:50px;">
-                <img src="Images/conoceme.png" style="visibility:hidden;">
+        <div id="splash">
+            <div id="img0">
+                <img src="Images/1.jpg" width="100%" />
             </div>
-            <a href="https://telegram.me/inge_juan_bot">
-                <div id="conoceme">
-                    <img src="Images/botonConoceme.png" style="visibility:hidden;">
-                </div>
+            <div id="img1" style="display: none;">
+                <img src="Images/2.jpg" width="100%" />
+            </div>
+            <div id="img2" style="display: none;">
+                <img src="Images/3.JPG" width="100%" />
+            </div>
+            <div id="img3" style="display: none;">
+                <img src="Images/4.JPG" width="100%" />
+            </div>
+        </div>
 
-            </a>
+    </div>
+
+    <div class="container">
+        <div id="header">
+            <div id="logoContainer">
+                <img src="Images/logoInge.png">
+            </div>
+            <div class="saludoContainer">
+                <h1>¡Hola! Yo soy el Inge Juan y te echaré la mano para que sepas todo lo que necesitas para mejorar tu casa.</h1>
+            </div>
+        </div>
+        <div>
+            <div class="videoContainer">
+                <iframe width="560" height="315" src=luisss.mp4  frameborder="0" allowfullscreen style="display:block;"></iframe>
+            </div>
+            <div class="descriptionContainer">
+                <div id="imgConoceme"style="margin-bottom:50px;">
+                    <img src="Images/conoceme.png" style="visibility:hidden;">
+                </div>
+                <a href="https://telegram.me/inge_juan_bot">
+                    <div id="conoceme">
+                        <img src="Images/botonConoceme.png" style="visibility:hidden;">
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
+
+    <script>
+        var i=0;
+        function slide() {
+            setInterval(function(){
+                $("#img"+i.toString()).slideToggle("slow");
+                i=(i+1)%4;
+                $("#img"+i.toString()).slideToggle("slow");
+            }, 5000);
+        }
+    </script>
 </div>

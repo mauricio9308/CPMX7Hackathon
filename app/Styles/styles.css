@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-body{ 
+body{
     background-image: url("../Images/fondo.jpg");
     /*background: rgba(255,255,255,1);
     background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(187,187,187,1) 100%);
@@ -32,41 +32,59 @@ body{
 }
 
 #splash{
-    height: 1000px;
+    height: 758px;
     width: 100%;
-    
-    
+    background-color: #5ec6f0;
+    overflow: hidden;
+    position: relative;
+}
+
+#logoSplash{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1000;
+}
+
+.infoSlide{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 600px;
+    height: 300px;
 }
 
 #footer{
     background-color: black;
-    height: 300px;
+    height: 100px;
     width: 100%;
 }
 
 #imgConoceme{
     background-image: url("../Images/conoceme.png");
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
 #imgConoceme:hover{
     background-image: url("../Images/conocemeHover.png");
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
 #conoceme{
     background-image: url("../Images/botonConoceme.png");
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
 #conoceme:hover{
     background-image: url("../Images/botonConocemeHover.png");
     background-repeat: no-repeat;
-    background-position: center;    
+    background-position: center;
 }
+
+
 
 .videoContainer{
     display: inline-block;
@@ -84,7 +102,7 @@ body{
     background: -ms-linear-gradient(left, rgba(207,0,28,1) 0%, rgba(249,76,100,1) 100%);
     background: linear-gradient(to right, rgba(207,0,28,1) 0%, rgba(249,76,100,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf001c', endColorstr='#f94c64', GradientType=1 );
-    
+
 }
 
 .saludoContainer{
@@ -148,3 +166,4 @@ md-list-item{
 md-list-item .md-button{
     margin-top: 25px;
 }
+
